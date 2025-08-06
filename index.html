@@ -41,7 +41,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            width: 100%;
+            
         }
 
         button:hover {
@@ -56,6 +56,7 @@
     <hr>
     <input type="number" id="length" placeholder="Enter length">
     <input type="number" id="width" placeholder="Enter width">
+    <input type="number" id="area" placeholder="Area">
     <button onclick="calculateArea()" id="calculate">Area of rectangle</button></div>
 
     <script>
@@ -65,10 +66,12 @@
             if (length && width) {
                 const area = (parseFloat(length) * parseFloat(width));
                 console.log(`The area is: ${area}`);
-                alert(`The area is: ${area}`);
+                document.getElementById("area").value = area;
+                
             } else {
                 console.error("Error: Please enter valid numbers for length and width.");
-                alert("Please enter valid numbers for length and width.");
+                document.getElementById(area).value = "Error: Please enter valid numbers";
+                
             }
         }
 
